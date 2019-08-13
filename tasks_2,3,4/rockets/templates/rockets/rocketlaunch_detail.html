@@ -8,16 +8,14 @@
 {% endblock head_css_section %}
 
 {% block content %}
-  <h1 class= "heading"><img src="https://images2.imgbox.com/74/47/sUQWbzq9_o.png" alt="SpaceX"/>{{ rocketlaunch.name }}</h1>
-  <hr style="margin-top: -8px">
+  <h1 class= "heading">Launch Details: {{ rocketlaunch.name }}</h1>
+  <hr>
 	<div class="content">
 		<ul>
 		<li><p><strong>Flight Number: </strong>{{ rocketlaunch.flight_number }}</p></li>
 		
 		<li><p><strong>Date & Time (UTC): </strong>{{ rocketlaunch.launch_date_time }}</p></li>
 		
-		<li><p><strong>Location: </strong>{{ rocketlaunch.site_name }}</p></li>
-
 		<li><p><strong>Mission Success: </strong><span class="{% if rocketlaunch.launch_success %}text-success{% else %}text-danger{% endif %}" style="text-transform: uppercase;">{{ rocketlaunch.launch_success }}</span></p></li>
 
 		<li><p><strong>Mission Patch: </strong>		
@@ -39,11 +37,16 @@
 		<li><div><strong>Video: </strong>		
 		{% if rocketlaunch.youtube_id %}
 			<p></p>
-			<iframe width="640" height="360" src="https://www.youtube.com/embed/{{ rocketlaunch.youtube_id }}" allowfullscreen="allowfullscreen"></iframe>
+			<iframe width="640" height="360" src="https://www.youtube.com/embed/{{ rocketlaunch.youtube_id }}"></iframe>
 		{% else %}
 			<span class="text-danger">None</span>
 		{% endif %}
-		</div></li>		
+		</div></li>
+		
+		<li><strong>Location:</strong>
+		{{ rocketlaunch.site_name }}
+		</li>
+
 		</ul>
   	</div>
 {% endblock %}

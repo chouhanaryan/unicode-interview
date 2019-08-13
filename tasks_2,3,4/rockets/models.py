@@ -19,7 +19,3 @@ class RocketLaunch(models.Model):
 	def __str__(self):		
 		"""String for representing the Model object."""
 		return f'({self.flight_number}, {self.name})'
-
-	class Meta:
-		ordering = ['flight_number', 'name']
-		verbose_name_plural = "Rocket launches"

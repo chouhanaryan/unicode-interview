@@ -18,20 +18,30 @@
 </head>
 
 <body>
+
   <div class="container-fluid">
+  
     <div class="row">
-      <div class="col-sm-2" style="padding-top: 15px">
-      {% block sidebar %}      
-        <ul class="sidebar-nav">          
+  
+      <div class="col-sm-2">
+
+      {% block sidebar %}
+        <ul class="sidebar-nav">
+          <img src="https://images2.imgbox.com/74/47/sUQWbzq9_o.png">
           <li><a href="{% url 'index' %}">Home</a></li>
           <li><a href="{% url 'launch-list' %}">Launches</a></li>
           <li><a href="{% url 'load' %}">Load</a></li>
-          <li><a href="{% url 'flush' %}">Flush</a></li>          
-          <br>            
+          <li><a href="{% url 'flush' %}">Flush</a></li>
+
+          <br>
         </ul>
      {% endblock %}
       </div>
+
       <div class="col-sm-10">
+
+      <div class="vertical-line"></div>
+        
         {% block content %}
         {% endblock %}  
       </div>      
