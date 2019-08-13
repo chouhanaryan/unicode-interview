@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<title>Launch Detail: {{ rocketlaunch.name }}</title>{% endblock %}
+
+{% block content %}
+  <h1 style="padding-top: 15px; padding-bottom: 5px">Launch Detail: {{ rocketlaunch.name }}</h1>
+  <hr>
+  {{ rocketlaunch.launch_date_time }}
+  <img src="{{ rocketlaunch.link }}">
+
+{% endblock %}
+

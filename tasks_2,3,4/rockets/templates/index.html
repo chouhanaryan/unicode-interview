@@ -1,0 +1,14 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>SpaceX Launches: Home</title>{% endblock %}
+
+{% block content %}
+  <h1 style="padding-top: 15px">Home</h1>  
+  <p style="padding-top: 5px">Welcome to the SpaceX Launches API!</p>
+  <hr>
+  <p>The database has the following records:</p>
+  <ul>
+    <li><strong>Launches:</strong> {{ rockets_count }} </li>
+  </ul>
+  <footer style="position: fixed; bottom: 20px">FOOTER</footer>
+{% endblock %}

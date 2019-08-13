@@ -1,0 +1,22 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>SpaceX Launches: Launch List</title>{% endblock %}
+
+{% block content %}
+
+<h1 style="padding-top: 15px">Launch List</h1>
+<hr>
+
+{% if rockets %}
+	<ol>
+	{% for rockets in rockets %}
+	<li><a href="{{ rockets.get_absolute_url }}">{{ rockets.name }}</a></li>
+	<p></p>
+	{% endfor %}
+	</ol>
+
+{% else %}
+<p>Please load the data from the API first.</p>
+{% endif %}
+
+{% endblock %}
