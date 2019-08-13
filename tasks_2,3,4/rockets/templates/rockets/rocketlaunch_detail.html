@@ -17,6 +17,44 @@
 		<li><p><strong>Date & Time (UTC): </strong>{{ rocketlaunch.launch_date_time }}</p></li>
 
 		<li><strong>Location: </strong>{{ rocketlaunch.site_name }}</li>
+
+		<p></p>
+
+		<div style="width: 500px; height: 300px" id="map"></div>
+	    <script>
+		// Initialize and add the map
+
+			function initMap() 
+			{
+				let location = "{{rocketlaunch.site_name}}";
+				var coord;
+				if(location == 'CCAFS SLC 40')
+				{
+					coord = {lat: 28.5620, lng: -80.5772};
+				}
+				else if(location == 'KSC LC 39A')
+				{
+					coord = {lat: 28.5729, lng: -80.6490};
+				}
+				else if(location == 'Kwajalein Atoll')
+				{
+					coord = {lat: 8.7167, lng: -167.7333};
+				}
+				else
+				{
+					coord = {lat: 34.6330, lng: -120.6153};
+				}
+			  // The map, centered at coord
+			  var map = new google.maps.Map(
+			      document.getElementById('map'), {zoom: 5, center: coord});
+			  // The marker, positioned at coord
+			  var marker = new google.maps.Marker({position: coord, map: map});
+			}
+	    </script>
+	    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5YbV5QI5shmlF3ukLUm4gOnYpJSHr_LA&callback=initMap"></script>
+
+
+		<p></p>
 		
 		<li><p><strong>Mission Success: </strong><span class="{% if rocketlaunch.launch_success %}text-success{% else %}text-danger{% endif %}" style="text-transform: uppercase;">{{ rocketlaunch.launch_success }}</span></p></li>
 

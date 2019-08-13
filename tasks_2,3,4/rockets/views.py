@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from rockets import models
 from django.views import generic
-from django.core.paginator import Paginator
 import requests
 import datetime
 
@@ -17,7 +16,7 @@ def load(request):
 		response = requests.get(url).json()		
 		for rocket in response:
 			r = models.RocketLaunch()
-			r.flight_number = rocket['flight_number']		
+			r.flight_number = rocket['flight_number']
 			x = rocket['launch_date_utc'][:10]
 			y = rocket['launch_date_utc'][11:22]
 			z = x+' '+y
