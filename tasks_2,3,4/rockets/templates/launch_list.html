@@ -1,22 +1,49 @@
 {% extends 'base_generic.html' %}
 
+
 {% block title %}<title>SpaceX Launches: Launch List</title>{% endblock %}
+
+{% block head_css_section %}
+    {% load static %}
+   <link rel="stylesheet" type="text/css" href="{% static 'css/list_styles.css' %}">
+{% endblock head_css_section %}
 
 {% block content %}
 
-<h1 style="padding-top: 15px">Launch List</h1>
-<hr>
-
+<h1 class= "heading" style="padding-top: 20px"><img src="https://images2.imgbox.com/74/47/sUQWbzq9_o.png" alt="SpaceX"/>Launch List</h1>
+  <hr style="margin-top: -8px">
 {% if rockets %}
-	<ol>
-	{% for rockets in rockets %}
-	<li><a href="{{ rockets.get_absolute_url }}">{{ rockets.name }}</a></li>
-	<p></p>
-	{% endfor %}
-	</ol>
+    {# <ol start="{% widthratio rockets.number 1 1 %}"> #}
+    <div class="list">
+        <ol>
+    	{% for rockets in rockets %}
+    	<li><a href="{{ rockets.get_absolute_url }}">{{ rockets.name }}</a></li>
+    	<p></p>
+    	{% endfor %}
+    	</ol>
+    </div>
 
+    {% comment %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if rockets.has_previous %}
+                    <a href="?page=1">&laquo; FIRST</a>
+                    <a href="?page={{ rockets.previous_page_number }}">Previous</a>
+                {% endif %}
+
+                <span class="current">
+                    {{ rockets.number }} of {{ rockets.paginator.num_pages }}
+                </span>
+
+                {% if rockets.has_next %}
+                    <a href="?page={{ rockets.next_page_number }}">Next</a>
+                    <a href="?page={{ rockets.paginator.num_pages }}">LAST &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endcomment %}
 {% else %}
-<p>Please load the data from the API first.</p>
+<p style="font-size: 17px">Please load the data from the API first.</p>
 {% endif %}
 
 {% endblock %}

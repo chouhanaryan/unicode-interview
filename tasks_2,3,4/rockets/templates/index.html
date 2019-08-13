@@ -2,13 +2,20 @@
 
 {% block title %}<title>SpaceX Launches: Home</title>{% endblock %}
 
+{% block head_css_section %}
+    {% load static %}
+   <link rel="stylesheet" href="{% static 'css/index_styles.css' %}">
+{% endblock head_css_section %}
+
 {% block content %}
-  <h1 style="padding-top: 15px">Home</h1>  
-  <p style="padding-top: 5px">Welcome to the SpaceX Launches API!</p>
+  <img src="https://images2.imgbox.com/74/47/sUQWbzq9_o.png" alt="SpaceX" style="padding-top: 20px" />
+  <p class="intro">Welcome to the SpaceX Rocket Launches website!</p>
   <hr>
-  <p>The database has the following records:</p>
+  <div class="content">
+  <p>The API is available at <a href="https://api.spacexdata.com/v3/launches" target="_blank">https://api.spacexdata.com/v3/launches</a></p>
+  <p>The database has the following records currently loaded:</p>
   <ul>
     <li><strong>Launches:</strong> {{ rockets_count }} </li>
   </ul>
-  <footer style="position: fixed; bottom: 20px">FOOTER</footer>
+  </div>
 {% endblock %}
