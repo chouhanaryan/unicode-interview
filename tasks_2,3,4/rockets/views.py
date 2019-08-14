@@ -25,8 +25,11 @@ def load(request):
 			r.link = rocket['links']['mission_patch_small']
 			r.wikipedia_link = rocket['links']['wikipedia']
 			r.youtube_id = rocket['links']['youtube_id']
-			r.site_name = rocket['launch_site']['site_name']
+			s = models.SiteName()
+			s.site_name = rocket['launch_site']['site_name']
+			# r.site_name = s
 			r.launch_success = rocket['launch_success']
+			# s.save()
 			r.save()
 
 		return render(request, 'load_success.html')
@@ -49,3 +52,6 @@ def launch_list(request):
 
 class RocketLaunchDetailView(generic.DetailView):
 	model = models.RocketLaunch
+
+class SiteNameListView(generic.ListView):
+	model = models.SiteName

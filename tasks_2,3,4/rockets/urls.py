@@ -6,6 +6,7 @@ urlpatterns = [
 	path('', views.index, name='index'),
 	path('launches/', views.launch_list, name='launch-list'),
     path('launches/<int:pk>', views.RocketLaunchDetailView.as_view(), name='rocketlaunch-detail'),
+    path('sites/', views.SiteNameListView.as_view(), name='sitename-list'),
 	path('load/', views.load, name='load'),
-	path('flush/', views.flush, name='flush')
+	path('flush/', views.flush, name='flush'),
 ]
