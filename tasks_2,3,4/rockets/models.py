@@ -13,9 +13,13 @@ class RocketLaunch(models.Model):
 	site_name = models.CharField(max_length=100, blank=True, null=True)	
 
 	def get_absolute_url(self):
-		"""Returns the url to access a particular launch instance."""
+		# Returns the url to access a particular launch instance
 		return reverse('rocketlaunch-detail', args=[str(self.id)])
 
 	def __str__(self):		
-		"""String for representing the Model object."""
+		# String for representing the Model object
 		return f'({self.flight_number}, {self.name})'
+
+	class Meta:
+		verbose_name_plural = "Rocket launches"
+		verbose_name = "Rocket launch"
