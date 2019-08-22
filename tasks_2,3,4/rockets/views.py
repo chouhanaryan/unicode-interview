@@ -6,12 +6,10 @@ import datetime
 
 def index(request):
 	rockets_count = models.RocketLaunch.objects.all().count()
-
 	return render (request, 'index.html', {'rockets_count': rockets_count})
 
 def load(request):
 	if models.RocketLaunch.objects.all().count() != 101:
-
 		url = 'https://api.spacexdata.com/v3/launches'	
 		response = requests.get(url).json()		
 		for rocket in response:
@@ -28,16 +26,12 @@ def load(request):
 			r.site_name = rocket['launch_site']['site_name']
 			r.launch_success = rocket['launch_success']
 			r.save()
-
 		return render(request, 'load_success.html')
-
 	else:
-
 		return render(request, 'load_failure.html')
 
 def flush(request):
 	models.RocketLaunch.objects.all().delete()
-
 	return render(request, 'flush.html')
 
 def launch_list(request):
