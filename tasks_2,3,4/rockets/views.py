@@ -3,6 +3,9 @@ from rockets import models
 from django.views import generic
 import requests
 import datetime
+# from django.utils.timezone import make_aware
+# import pytz
+
 
 def index(request):
 	rockets_count = models.RocketLaunch.objects.all().count()
@@ -19,6 +22,7 @@ def load(request):
 			y = rocket['launch_date_utc'][11:22]
 			z = x+' '+y
 			r.launch_date_time = datetime.datetime.strptime(z, '%Y-%m-%d %H:%M:%S.%f')
+			# make_aware(dt, timezone=pytz.timezone("UTC"))			 
 			r.name = rocket['mission_name']
 			r.link = rocket['links']['mission_patch_small']
 			r.wikipedia_link = rocket['links']['wikipedia']
