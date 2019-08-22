@@ -1,0 +1,19 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>SpaceX Launches: Error</title>{% endblock %}
+
+{% block content %}
+
+<h1 style="padding-top: 15px">Error</h1>
+<hr>
+<p style="padding-top: 5px; font-size: 17px">This page does not exist. Redirecting to Home page...</p>
+
+<script>
+    function redirect(){
+       window.location.href = "http://127.0.0.1:8000/";
+    }
+    setTimeout(redirect, 2000); //2000 is equivalent to 2 seconds
+</script>
+
+
+{% endblock %}
