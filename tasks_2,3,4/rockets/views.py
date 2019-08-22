@@ -13,8 +13,9 @@ def index(request):
 
 def load(request):
 	if models.RocketLaunch.objects.all().count() != 101:
-		url = 'https://api.spacexdata.com/v3/launches'	
-		response = requests.get(url).json()		
+		models.RocketLaunch.objects.all().delete()
+		url = 'https://api.spacexdata.com/v3/launches'
+		response = requests.get(url).json()
 		for rocket in response:
 			r = models.RocketLaunch()
 			r.flight_number = rocket['flight_number']
