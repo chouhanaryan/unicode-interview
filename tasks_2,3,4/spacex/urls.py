@@ -20,3 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('rockets.urls'))
 ]
+
+handler404 = 'rockets.views.handler404'
+handler500 = 'rockets.views.handler500'

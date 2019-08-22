@@ -49,3 +49,9 @@ def launch_list(request):
 
 class RocketLaunchDetailView(generic.DetailView):
 	model = models.RocketLaunch
+
+def handler404(request, exception):
+	return render(request, '404.html', status=404)
+
+def handler500(request):
+	return render(request, '500.html', status=500)
