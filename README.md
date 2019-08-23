@@ -1,17 +1,19 @@
-# unicode-interview
+# **unicode-interview**
 Tasks for the DJ-Unicode interview.
 
-**Task 1** - identify binary numbers divisible by 5 from a list of CSVs
+# **Task 1**
 
-**Tasks 2, 3, 4**
+> identify binary numbers divisible by 5 from a list of CSVs
 
-> website built using Django to consume the SpaceX API for launch data.
+# **Tasks 2, 3, 4**
+
+> website built using Django to consume the SpaceX API for launch data
 
 ## Prerequisites
 
 Django ver2.2.4
 
-'$ pip install Django'
+`$ pip install Django`
 
 ## Features
 
@@ -26,3 +28,10 @@ Django ver2.2.4
 2. Load data to local database
 3. Flush data from the local database
 4. Custom views for 404 & 500 errors
+
+## Running the code
+
+1. Compile and Run the `task_1.py`.
+2. Open the Terminal in the tasks_2,3,4 folder and run the following command
+
+   `$ python manage.py runserver --insecure`
