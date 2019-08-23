@@ -11,7 +11,7 @@ Tasks for the DJ-Unicode interview.
 
 ## Prerequisites
 
-Django ver2.2.4
+Django version 2.2.4 is required to build this project, which can be installed by running the following command in the Terminal
 
 `$ pip install Django`
 
