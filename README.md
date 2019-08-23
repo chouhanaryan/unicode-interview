@@ -33,4 +33,5 @@ Django version 2.2.4 is required to build this project, which can be installed b
 
 1. Compile and Run the `task_1.py`
 2. Open the Terminal in the tasks_2,3,4 folder and run the following command  
+
    `$ python manage.py runserver --insecure`
