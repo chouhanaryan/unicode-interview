@@ -17,7 +17,7 @@ Django version 2.2.4 is required to build this project, which can be installed b
 
 ### Features
 
-1. Display critical rocket launch details
+1. Display critical rocket launch details  
    - Mission name
    - Date and time (UTC)
    - Location (with Map)
@@ -31,7 +31,6 @@ Django version 2.2.4 is required to build this project, which can be installed b
 
 ### Running the code
 
-1. Compile and Run the `task_1.py`.
-2. Open the Terminal in the tasks_2,3,4 folder and run the following command
-
+1. Compile and Run the `task_1.py`
+2. Open the Terminal in the tasks_2,3,4 folder and run the following command  
    `$ python manage.py runserver --insecure`
